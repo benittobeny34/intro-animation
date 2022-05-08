@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Illusion of Typed Text</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Cochin, sans-serif;
+    }
+
+    h3 {
+        animation: type 2s steps(28), blink .5s infinite alternate;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid;
+        width: 22ch;
+    }
+
+
+    @keyframes type {
+        from {
+            width: 0;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .fade-in {
+        animation: fadeIn 2s;
+        animation-fill-mode: both;
+    }
+
+    .wait-2s {
+        animation-delay: 2s;
+    }
+
+    .wait-3s {
+        animation-delay: 3s;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+<body>
+<h3>I will sign up for laracasts</h3>
+<p class="fade-in wait-2s">some random description</p>
+<button class="fade-in wait-3s">Sign UP</button>
+</body>
+</html>
